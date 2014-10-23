@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		function LongestWord(sen) { 
+			var words = sen.split(" ");
+			var longest = 0;
+			var word = null;
+
+			for(var i = 0; i < words.length; i++)
+				if(longest < words[i].length) {
+					longest = words[i].length;
+					word = words[i];
+				}
+
+			console.log(word);
+			
+		}
+
+		LongestWord("Along the road a dinosaur ate a tree.");
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+   

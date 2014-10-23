@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		
+		function LetterChanges(str) { 
+			
+			var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+			var vowels = ["a","e","i","o","u"];
+
+			
+			var newstring = str;
+			for(var i = 0; i < str.length; i++) {
+
+				var stringchar = str.charAt(i);
+				var alphaindex = alphabet.indexOf(stringchar);
+
+				if(alphaindex > -1) {
+					var newstring = newstring.replace(stringchar, alphabet[alphaindex+1]);
+				}
+
+				
+			};
+
+			console.log(newstring);
+
+			var upperstring = newstring;
+			for(var n = 0; n < newstring.length; n++) {
+
+				var newstringchar = newstring.charAt(n);
+				var vowelsindex = vowels.indexOf(newstringchar);
+
+				if ( vowelsindex > -1 ) {
+
+					var charupper = newstringchar.toUpperCase();
+					var upperstring = upperstring.replace(newstringchar, charupper);
+				};
+			}
+
+			console.log(upperstring);
+
+		}
+
+		LetterChanges("here is a string.");
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+   
