@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		function SimpleSymbols(str) { 
+			
+			var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+			for (var i=0; i < str.length; i++) {
+
+				
+				if( alphabet.indexOf(str.charAt(0)) > -1 || alphabet.indexOf(str.charAt(str.length)) > -1  ) {
+					var answer = false;
+				} else if( alphabet.indexOf(str.charAt(i)) > -1 ) {
+
+					if( str.charAt(i+1) == "+" && str.charAt(i-1) == "+" ) {
+						// return true;
+						answer = true;
+					} else {
+						answer = false;
+					};
+
+				};
+
+			};
+
+			console.log(answer);
+			
+		}
+
+		SimpleSymbols("s+=3=+s+=+l+");
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+   
