@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		function LetterCapitalize(str) { 
+			var space = /\s/g;
+			var strarray = str.split(space);
+			var newstring = "";
+
+			for(var i=0; i < strarray.length; i++) {
+
+				var word = strarray[i];
+				var firstchar = word.charAt(0);
+				var upperchar = firstchar.toUpperCase();
+
+				var newword = word.replace(firstchar, upperchar);
+				newstring = newstring + newword + " ";
+				console.log(newstring);
+
+			};
+			
+		}
+
+		LetterCapitalize("once Upon a time, there was a queen. She was very beautiful.");
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+   
