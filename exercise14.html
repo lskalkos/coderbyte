@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		function ExOh(str) { 
+			
+
+			var sign = "x";
+			var xcounter = 0;
+			var ocounter = 0;
+
+			for(var i = 0; i < str.length; i++) {
+				 
+				 if( str.charAt(i) == "x" ) {
+				 	xcounter = xcounter + 1;
+				 } else {
+				 	ocounter = ocounter + 1;
+				 }
+			}
+
+			if ( xcounter == ocounter ) {
+				return true; 
+			} else {
+				return false;
+			}
+			
+			
+		}
+
+		var answer = ExOh("oxoxox");
+
+		console.log(answer);
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+   

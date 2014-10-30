@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		function Palindrome(str) { 
+			
+			var end = str.length;
+
+			for( var i=0; i < str.length; i++) {
+
+				if( str.charAt(i) == str.charAt(end - (i+1)) ) {
+					return true;
+				} else {
+					return false;
+				}
+			};
+			
+		}
+
+		var answer = Palindrome("piosadf joid");
+
+		console.log(answer);
+
+	
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+   

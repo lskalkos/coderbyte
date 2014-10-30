@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		function ArithGeo(arr) { 
+			
+			var end = arr.length;
+			var type = ""
+
+			for( var i = 0; i < arr.length-1; i++) {
+
+				
+				if( arr[i+1] % arr[i] == 0 ) {
+
+					type = "Geometric";
+
+				} else {
+
+					for( var n = 0; n < arr.length-1; n++) {
+
+						if( arr[n+1] - arr[n] == arr[end - (n+1)] - arr[end - (n+2)] ) {
+							type = "Arithmetic";
+						} else {
+							type = "Undefined";
+						};
+					}
+				}
+			};
+
+			return type;
+
+		
+		}
+
+
+		var answer = ArithGeo([1,4,6,11]);
+
+		console.log(answer);
+		
+
+	
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+   
