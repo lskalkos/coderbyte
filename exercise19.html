@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+
+	function SecondGreatLow(arr) {
+
+		var newarr = arr.sort(function(a, b){return a-b});
+
+		var highest = newarr[newarr.length-1];
+		var lowest = newarr[0];
+
+		
+		if ( newarr.length < 3 ) {
+			var second_lowest = newarr[0];
+		} else {
+			second_lowest = newarr[1];
+
+			for ( var i = 1; i < newarr.length; i++) {
+
+				if ( second_lowest == lowest ) {
+
+					second_lowest = newarr[i+1];
+				}
+			}
+		}
+
+		if ( newarr.length < 3 ) {
+			var second_highest = newarr[newarr.length-1];
+		} else {
+			second_highest = newarr[newarr.length-2];
+
+			for ( var j = newarr.length-2; j > 0; j--) {
+
+				if ( second_highest == highest ) {
+
+					second_highest = newarr[j-1];
+				}
+			}
+		}
+
+
+
+		console.log(second_highest);
+
+		console.log(second_lowest);
+
+	}
+
+
+	SecondGreatLow([7,5,3,2,1,11,16,12])
+
+
+	</script>
+</html>

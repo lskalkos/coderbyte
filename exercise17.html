@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		function ArrayAdditionI(arr) { 
+			
+			arr.sort(function(a, b){return a-b});
+			var largest = arr.pop();
+			var sum = 0;
+
+			for( var i = 0; i < arr.length; i++) {
+
+				sum += arr[i];
+
+				for( var j = 0; j < arr.length; j++ ) {
+
+					if( i != j ) {
+						sum += arr[j];
+
+						if ( sum == largest ) {
+							return true;
+						}
+					}
+				} 
+
+				for ( var k = 0; k < arr.length; k++) {
+
+					if( i != k ) {
+						sum -= arr[k];
+
+						if ( sum == largest ) {
+							return true;
+						}
+					}
+				}
+
+			}
+
+			return false;
+
+		}
+
+
+		var result = ArrayAdditionI([23,18,12,7,5,4,3,2,1]);
+		console.log(result);
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+   

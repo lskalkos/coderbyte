@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		function CountingMinutesI(str) { 
+			
+			var start_time = str.slice(0, -(str.length-str.indexOf("-")) );
+			var end_time = str.slice(-(str.length-1-str.indexOf("-")) );
+			var start_hour = parseInt(start_time);
+			var end_hour = parseInt(end_time);
+			var start_minutes_slice = start_time.slice( start_time.indexOf(":")+1, -2)
+			var end_minutes_slice = end_time.slice( end_time.indexOf(":")+1, -2)
+			var start_minutes = parseInt(start_minutes_slice);
+			var end_minutes = parseInt(end_minutes_slice);
+			var hour_minutes = 0;
+
+
+			if( start_minutes > 0 ) {
+
+				start_minutes = 60 - start_minutes;
+				start_hour = start_hour + 1;
+			}
+
+
+			function MilitaryTime(timestring, time) { 
+				
+
+				if ( timestring.indexOf("pm") > -1 && time < 12) {
+
+					time = time + 12;					
+
+				} else if ( timestring.indexOf("am") > -1 && time == 12) {
+
+					time = 24;
+
+				}; 
+
+				return time;
+			};
+
+			start_hour = MilitaryTime(start_time, start_hour);
+			end_hour = MilitaryTime(end_time, end_hour);
+
+
+			if ( start_hour > end_hour ) {
+
+				hour_minutes = (24-start_hour + end_hour)*60;
+
+			} else {
+
+				hour_minutes = (end_hour - start_hour)*60;
+				
+			}
+
+			
+			hour_minutes = hour_minutes + start_minutes + end_minutes;
+			console.log(hour_minutes);
+			
+		}
+
+		CountingMinutesI("6:30pm-1:30am");
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+   

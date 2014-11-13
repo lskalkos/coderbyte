@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		function LetterCountI(str) { 
+			
+			var words = str.split(" ");	
+			var alphawords = [];
+			var counters = [];	
+
+			for ( var i = 0; i < words.length; i++ ) {
+
+				var newword = words[i].split("").sort().join("");
+				alphawords.push(newword);
+
+			};
+
+
+			for ( var n = 0; n < alphawords.length; n++ ) {
+
+				var new_alphaword = alphawords[n];
+
+				var counter = 0;
+				for ( var j = 0; j < new_alphaword.length; j++ ) {
+
+					if ( new_alphaword.charAt(j) == new_alphaword.charAt(j+1) ) {
+						counter += 1;
+					} 
+
+				}
+
+				counters.push(counter);
+
+			}
+
+			var largest = counters[0];
+			var position = 0;
+
+			for ( var k = 0; k < counters.length; k++ ) {
+
+				if ( largest < counters[k+1] ) {
+
+					largest = counters[k+1];
+					position = k+1;
+
+				};
+
+			}
+
+			if ( largest == 0 ) {
+				return -1;
+			}
+
+			return words[position];
+
+		}
+
+
+		var test1 = LetterCountI("Hello apple pie");
+		console.log(test1);
+
+		var test2 = LetterCountI("No words");
+		console.log(test2);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+   

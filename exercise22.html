@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+
+	function MeanMode(arr) {
+
+
+		arr = arr.sort(function(a, b){return a-b});
+		var counter = 0;
+		var counter_arr = [];
+		var sum = 0;
+
+		for( var i = 0; i < arr.length; i++ ) {
+
+			if ( arr[i] == arr[i+1] ) {
+
+			counter = counter + 1;
+
+			counter_arr.push(counter);
+
+			} else if ( arr[i] != arr[i+1] ) {
+
+				counter = 0;
+
+				counter_arr.push(counter);
+
+			}
+		}
+
+		var max = counter_arr[0];
+
+		for ( var n = 0; n < counter_arr.length; n++ ) {
+
+			if ( counter_arr[n] < counter_arr[n+1]  ) {
+
+				max = counter_arr[n+1];
+			}
+
+			var location_mode = counter_arr.indexOf(max); 
+		}
+
+		var mode = arr[location_mode];
+
+		for ( var k = 0; k < arr.length; k++ ) {
+
+			sum = sum + arr[k];
+
+			var mean = sum/arr.length;
+		}
+
+		if( mode == mean ) {
+			return 1;
+		} else {
+			return 0;
+		}		
+
+	}
+
+	var answer = MeanMode([2,2,2,2]);
+
+	console.log(answer);
+
+
+	</script>
+</html>
